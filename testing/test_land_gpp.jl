@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.4
+# v0.14.5
 
 using Markdown
 using InteractiveUtils
@@ -12,9 +12,9 @@ using PkgUtility,PyPlot
 
 # ╔═╡ 91967790-2c00-4289-a1d1-239f898442fa
 begin
-    data_b = read_nc("/home/wyujie/Data/LandGPP/nc/B_2020_1X.nc", "weibullb");
-    data_k = read_nc("/home/wyujie/Data/LandGPP/nc/K_2020_1X.nc", "kmax");
-    data_e = read_nc("/home/wyujie/Data/LandGPP/nc/RMSE_2020_1X.nc", "rmse");
+    data_b = read_nc("/home/wyujie/RAID/Data/LandGPP/nc/B_2020_1X.nc", "weibullb");
+    data_k = read_nc("/home/wyujie/RAID/Data/LandGPP/nc/K_2020_1X.nc", "kmax");
+    data_e = read_nc("/home/wyujie/RAID/Data/LandGPP/nc/RMSE_2020_1X.nc", "rmse");
 end;
 
 # ╔═╡ f1272e55-93c4-43f2-b953-3e2a1c463d3d
@@ -39,7 +39,7 @@ end
 begin
     figure(3, figsize=(10,5), dpi=100);
     clf();
-    map_e = imshow(data_e', origin="lower", vmin=0, vmax=200);
+    map_e = imshow(data_e', origin="lower", vmin=0, vmax=8);
     colorbar(map_e);
     gcf()
 end
